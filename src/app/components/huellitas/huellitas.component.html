@@ -1,0 +1,47 @@
+<section
+  class="w-full max-w-[1440px] mx-auto xl:h-[450px] min-h-[100%] flex flex-col items-center justify-between border-b-[3px] border-decorativo"
+  id="huellitas"
+>
+  <header
+    class="w-full max-w-[1440px] flex justify-between sm:flex-row flex-col"
+  >
+    <h3
+      class="text-[20px] min-w-[220px] h-[35px] text-text-subtitulos font-bold flex justify-center items-center"
+    >
+      Huellitas de Amigos
+    </h3>
+
+    <a
+      href="#"
+      class="w-[130px] h-[35px] text-[20px] text-enlaces font-bolder flex justify-between items-center"
+    >
+      Ver Todos <app-arrow></app-arrow>
+    </a>
+  </header>
+
+  <ul
+    class="w-full max-w-[1440px] flex flex-wrap justify-between h-full min-h-[300px] gap-5"
+  >
+    <li
+      *ngFor="let h of huellitasList"
+      class="list-none h-full min-h-[250px] min-w-[100%] sm:min-w-fit flex flex-col justify-evenly items-center"
+    >
+      <div
+        class="bg-decorativo rounded-[20px] sm:w-[250px] w-[100%] h-[250px] flex justify-center items-center overflow-hidden"
+      >
+        <img
+          [src]="h.img"
+          [alt]="h.alt"
+          width="170"
+          height="170"
+          loading="lazy"
+          class="rounded-[20px] object-cover"
+        />
+      </div>
+
+      <span class="w-full h-[35px] text-[20px] text-text-subtitulos text-left">
+        {{ h.name }}
+      </span>
+    </li>
+  </ul>
+</section>

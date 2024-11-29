@@ -1,0 +1,104 @@
+<section class="flex max-h-screen w-full justify-around gap-5">
+  <div
+    class="flex flex-col items-center max-w-xl md:w-[50%] w-full justify-center md:h-screen"
+  >
+    <a
+      routerLink="/"
+      class="flex bg-white bg-opacity-[0.33] backdrop-blur-[25px] items-center mb-6 text-2xl font-semibold text-gray-900 justify-around rounded-lg shadow w-full p-6 space-y-4 md:space-y-6 sm:p-8"
+    >
+      <app-arrow class="rotate-180"></app-arrow>
+      Huellas360
+    </a>
+    <div
+      class="bg-white bg-opacity-[0.33] backdrop-blur-[25px] rounded-lg shadow w-full p-6 space-y-4 md:space-y-6 sm:p-8"
+    >
+      <h1
+        class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl"
+      >
+        Ingresa a tu Cuenta
+      </h1>
+      <form class="space-y-4 md:space-y-6">
+        <fieldset>
+          <label
+            for="email"
+            class="block mb-2 text-sm font-medium text-gray-900"
+            >Su Correo Electrónico</label
+          >
+          <input
+            type="email"
+            name="email"
+            id="email"
+            class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+            placeholder="email@ejemplo.com"
+            required
+          />
+        </fieldset>
+        <fieldset>
+          <label
+            for="password"
+            class="block mb-2 text-sm font-medium text-gray-900"
+            >Contraseña</label
+          >
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="••••••••"
+            class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+            required
+          />
+        </fieldset>
+        <div class="flex items-center justify-between">
+          <div class="flex items-start">
+            <div class="flex items-center h-5">
+              <input
+                id="remember"
+                aria-describedby="remember"
+                type="checkbox"
+                name="remember"
+                class="w-4 h-4 text-text-titulo bg-background-50 border-decorativo rounded focus:ring-text-parrafos"
+              />
+            </div>
+            <div class="ml-3 text-sm">
+              <label for="remember" class="text-gray-500 text-wrap"
+                >Sesión Extendida de 7 dias</label
+              >
+            </div>
+          </div>
+          <a
+            routerLink="/"
+            class="text-sm font-medium text-primary-600 hover:underline text-right"
+            >¿Olvidó su contraseña??</a
+          >
+        </div>
+        <button
+          type="submit"
+          class="w-full text-text-titulo bg-background-50 hover:bg-decorativo focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+        >
+          Ingresar
+        </button>
+        <p class="text-sm font-light text-gray-500">
+          ¿No tiene una cuenta creada todavía?
+          <a
+            routerLink="/register"
+            class="font-medium text-primary-600 hover:underline text-wrap"
+            >Cree Su Cuenta aquí</a
+          >
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <div
+    class="md:max-w-[50%] flex items-center justify-center md:relative absolute md:z-10 -z-20 max-w-screen-2xl w-full h-screen md:h-auto md:right-auto md:left-auto md:top-auto md:bottom-auto right-0 top-0 left-0 bottom-0 m-auto overflow-hidden"
+  >
+    <img
+      class="w-500 object-cover md:object-contain md:scale-100 scale-[1.8] h-full rounded-2xl shadow-2xl"
+      src="../../../assets/images/logoHuellas.webp"
+      alt="logo"
+      loading="lazy"
+      width="500"
+      height="500"
+    />
+  </div>
+</section>

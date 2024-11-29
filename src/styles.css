@@ -1,1 +1,98 @@
-/* You can add global styles to this file, and also import other style files */
+@import "flowbite";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .h-full-im {
+    height: 100% !important;
+  }
+
+  .border-none {
+    border: none !important;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  scroll-behavior: smooth;
+  scroll-padding: 4em;
+}
+
+/* Estilo para la barra de scroll */
+::-webkit-scrollbar {
+  width: 8px; /* Ancho del scrollbar */
+  height: 8px; /* Alto del scrollbar (para scroll horizontal) */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color del fondo del scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color del thumb */
+  border-radius: 10px; /* Redondeo del thumb */
+  border: 2px solid #f1f1f1; /* Borde alrededor del thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Color del thumb al pasar el mouse */
+}
+
+@layer base {
+  img {
+    height: revert-layer; /* Quita el height: auto */
+  }
+}
+
+body {
+  min-height: 100vh;
+  /*  background-repeat: no-repeat;
+background-image: radial-gradient(
+        circle at 0% 0%,
+        rgba(231, 138, 240, 0.35) 3%,
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at 20% 0%,
+        rgba(138, 144, 240, 0.35) 3%,
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at 40% 0%,
+        rgba(138, 230, 240, 0.35) 3%,
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at 60% 0%,
+        rgba(138, 240, 150, 0.35) 3%,
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at 80% 0%,
+        rgba(236, 240, 138, 0.35) 3%,
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at 100% 0%,
+        rgba(240, 177, 138, 0.35) 3%,
+        transparent 40%
+      );
+  background-blend-mode: normal, normal, normal, normal, normal, normal; */
+  padding: 0 50px;
+}
+
+.maxWidth {
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #c66500;
+}

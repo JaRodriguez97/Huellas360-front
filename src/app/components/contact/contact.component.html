@@ -1,0 +1,115 @@
+<section id="contacto">
+  <footer class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+    <h2
+      class="mb-4 text-4xl tracking-tight font-extrabold text-center text-text-titulo"
+    >
+      ¡Conectemos para Ayudar a Más Mascotas!
+    </h2>
+    <p class="mb-8 lg:mb-16 font-light text-center text-text-parrafos text-xl">
+      ¿Quieres adoptar un nuevo amigo? ¿Has visto un animal en situación de
+      calle? ¿Te interesa ser voluntario o apoyar nuestra misión? Escríbenos,
+      juntos podemos marcar la diferencia.
+    </p>
+
+    <form class="space-y-8">
+      <div>
+        <label
+          for="email"
+          class="block mb-2 text-sm font-medium text-text-titulo"
+        >
+          Tu correo electrónico
+        </label>
+        <input
+          type="email"
+          id="email"
+          class="shadow-sm bg-background-50 border border-decorativo text-text-titulo text-sm rounded-lg focus:ring-enlaces focus:border-enlaces block w-full p-2.5"
+          placeholder="nombre@dominio.com"
+          required
+        />
+      </div>
+      <div>
+        <label
+          for="subject"
+          class="block mb-2 text-sm font-medium text-text-titulo"
+        >
+          Asunto
+        </label>
+        <input
+          type="text"
+          id="subject"
+          class="block p-3 w-full text-sm text-text-titulo bg-background-50 rounded-lg border border-decorativo shadow-sm focus:ring-enlaces focus:border-enlaces"
+          placeholder="Cuéntanos cómo podemos ayudarte"
+          required
+        />
+      </div>
+      <div class="sm:col-span-2">
+        <label
+          for="message"
+          class="block mb-2 text-sm font-medium text-text-titulo"
+        >
+          Tu mensaje
+        </label>
+        <textarea
+          id="message"
+          rows="6"
+          class="block p-2.5 w-full text-sm text-text-titulo bg-background-50 rounded-lg shadow-sm border border-decorativo focus:ring-enlaces focus:border-enlaces"
+          placeholder="Escribe tu comentario..."
+        ></textarea>
+      </div>
+
+      <label class="flex flex-row gap-5">
+        <input
+          type="checkbox"
+          name="terminos"
+          id="terminos"
+          class="w-4 h-4 text-text-titulo bg-background-50 border-decorativo rounded focus:ring-text-parrafos"
+          required
+        />
+        <p class="text-text-parrafos">
+          Al marcar esta casilla, confirmas que has leído y aceptado
+          <a
+            href="/terminos"
+            class="text-enlaces hover:text-decorativo font-bold underline"
+            >Nuestros Términos y condiciones</a
+          >, los cuales detallan las políticas de privacidad, el uso responsable
+          de nuestros servicios y los derechos y obligaciones que tienes como
+          usuario. Asegúrate de revisarlos detenidamente antes de continuar.
+        </p>
+      </label>
+
+      <div class="flex h-auto justify-between">
+        <button
+          class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-enlaces hover:bg-decorativo focus:ring-4 focus:outline-none focus:ring-enlaces"
+        >
+          Enviar mensaje
+        </button>
+
+        <ul class="flex h-full md:w-[30%] w-fit justify-between">
+          <li *ngFor="let sm of socialMediaList">
+            <a
+              [href]="sm.url"
+              target="_blank"
+              [title]="sm.name"
+              reel="noreferrer noopener"
+            >
+              <app-facebook *ngIf="sm.name == 'Facebook'"></app-facebook>
+              <app-instagram *ngIf="sm.name == 'Instagram'"></app-instagram>
+              <app-tiktok *ngIf="sm.name == 'TikTok'"></app-tiktok>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </form>
+  </footer>
+
+  <strong class="text-center block text-sm text-gray-600 py-3">
+    Copyright 2024
+    <a
+      href="https://jarg-dev.netlify.app/"
+      target="_blank"
+      class="text-enlaces hover:text-decorativo"
+      >JA_RG</a
+    >
+    - Todos Los Derechos Reservados.
+  </strong>
+</section>

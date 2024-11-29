@@ -1,0 +1,45 @@
+<header
+  class="w-full max-w-[1440px] mx-auto bg-background-50 bg-opacity-[0.33] backdrop-blur-[25px] h-[60px] flex justify-between items-center sticky top-0 left-0 right-0 z-10 border-b-[3px] border-decorativo"
+>
+  <a href="/" class="flex items-center font-bold">Huellas360</a>
+
+  <nav
+    class="xl:h-[60px] xl:relative xl:flex absolute top-0 left-0 right-0 h-screen items-center justify-center xl:bg-transparent bg-white backdrop-blur-[25px] gap-[20px]"
+    role="navigation"
+    aria-label="Menú principal"
+    [ngClass]="{ flex: isMenuOpen, hidden: !isMenuOpen }"
+  >
+    <ul
+      class="flex gap-[20px] items-center w-[1070px] max-w-full h-full xl:flex-row flex-col"
+    >
+      <li
+        *ngFor="let l of listLinks"
+        class="flex items-center justify-center w-[20%] h-full"
+      >
+        <a
+          href="landing{{ l.url }}"
+          [ngClass]="{
+            'font-bold text-black bg-background-50 my-10': isActive(l.url)
+          }"
+          class="flex items-center justify-center w-full h-full"
+          >{{ l.name }}</a
+        >
+      </li>
+      <li class="flex items-center justify-center w-[70px] h-full">
+        <a
+          routerLink="/login"
+          class="flex items-center justify-center w-full h-full"
+          >Cuenta</a
+        >
+      </li>
+    </ul>
+  </nav>
+
+  <button
+    class="flex items-center justify-center w-[70px] h-full xl:hidden text-text-titulo z-50"
+    (click)="toggleMenu()"
+  >
+    <app-burguer-menu *ngIf="!isMenuOpen"></app-burguer-menu>
+    <app-close *ngIf="isMenuOpen"></app-close>
+  </button>
+</header>
