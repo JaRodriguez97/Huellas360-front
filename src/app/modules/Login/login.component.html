@@ -17,7 +17,11 @@
       >
         Ingresa a tu Cuenta
       </h1>
-      <form class="space-y-4 md:space-y-6">
+      <form
+        [formGroup]="loginForm"
+        (ngSubmit)="onSubmit()"
+        class="space-y-4 md:space-y-6"
+      >
         <fieldset>
           <label
             for="email"
@@ -25,6 +29,7 @@
             >Su Correo Electrónico</label
           >
           <input
+            formControlName="email"
             type="email"
             name="email"
             id="email"
@@ -40,6 +45,7 @@
             >Contraseña</label
           >
           <input
+            formControlName="password"
             type="password"
             name="password"
             id="password"
@@ -52,6 +58,7 @@
           <div class="flex items-start">
             <div class="flex items-center h-5">
               <input
+                formControlName="remember"
                 id="remember"
                 aria-describedby="remember"
                 type="checkbox"
@@ -61,18 +68,22 @@
             </div>
             <div class="ml-3 text-sm">
               <label for="remember" class="text-gray-500 text-wrap"
-                >Sesión Extendida de 7 dias</label
+                >Sesión Extendida de 7 días</label
               >
             </div>
           </div>
           <a
             routerLink="/"
             class="text-sm font-medium text-primary-600 hover:underline text-right"
-            >¿Olvidó su contraseña??</a
+            >¿Olvidó su contraseña?</a
           >
         </div>
         <button
           type="submit"
+          [disabled]="isSubmitting || loginForm.invalid"
+          [ngClass]="{
+            'opacity-50 cursor-not-allowed': isSubmitting || loginForm.invalid
+          }"
           class="w-full text-text-titulo bg-background-50 hover:bg-decorativo focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
         >
           Ingresar
